@@ -24,6 +24,7 @@ const SliderBar = (props) => {
         return style.exampleCarousel;
       case carouselConstants.FEEDBACK_SLIDER:
         return style.feedbackCarousel;
+      default: return null;  
     }
   };
 
@@ -58,6 +59,7 @@ const SliderBar = (props) => {
           </div>
         ));
       }
+      default: return null;
     }
   };
   return (
@@ -66,9 +68,7 @@ const SliderBar = (props) => {
       elementType="div"
       options={options}
     >
-      {
-                renderSlides()
-            }
+      {renderSlides()}
     </Flickity>
   );
 };

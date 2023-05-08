@@ -13,4 +13,4 @@ const HowItWorks = () => {
     )
 }
 
-export default HowItWorksComponent;
+export default HowItWorks;

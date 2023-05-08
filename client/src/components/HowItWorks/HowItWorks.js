@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from 'react';
 import styles from "./HowItWorks.module.sass"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import CONSTANTS from '../../constants';
+import Modal from 'react-modal';
 
 const HowItWorks = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const openModal = () => setIsOpen(true);
+    const closeModal = () => setIsOpen(false);
     return (
         <div>
             <Header/>
@@ -18,10 +22,22 @@ const HowItWorks = () => {
                         combining the power of crowdsourcing with sophisticated technology
                         and Agency-level validation services.
                         </p>
-                        <a href='https://vimeo.com/368584367'>
-                        <i className='fas fa-play'></i>
-                            <span className={styles.btn}></span>Play video
-                        </a>
+                        <div onClick={openModal}>
+                            <i className='fas fa-play'></i>
+                                <span className={styles.btn}></span>
+                                Play video
+                        </div>
+                        <Modal className={styles.modal} isOpen={isOpen} onRequestClose={closeModal}>
+                            <div className={styles.videoContainer}>
+                            <iframe
+                                title="video"
+                                src="https://player.vimeo.com/video/368584367"
+                                width="640"
+                                height="360"
+                                allowFullScreen
+                            />
+                            </div>
+                        </Modal>
                     </div>
                     <div className={styles.image}>
                         <img src={`${CONSTANTS.STATIC_IMAGES_PATH}/phone2.png`}></img>

@@ -72,8 +72,7 @@ const RegistrationPage = (props) => {
               the world's largest branding community.
               Quality and Collaboration: Using an advanced Quality Scoring
               Algorithm, we ensure
-              that you receive more ideas from our top-quality creatives, and we
-              use Gamification
+              that you receive more ideas from our top-quality creatives, and we use Gamification
               best practices to encourage high-quality brainstorming and two-way
               communication
               throughout your contest.

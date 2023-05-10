@@ -1,0 +1,24 @@
+[
+    {
+      "header": "Launch a Contest",
+      "body": "Work with hundreds of creative experts to get custom name suggestions for your business or brand. All names are auto-checked for URL availability.",
+      "button": "#",
+      "buttonText": "Launch a Contest",
+      "image": "ways-to-use-one.png"
+    },
+    {
+      "header": "Explore Names For Sale",
+      "body": "Our branding team has curated thousands of pre-made names that you can purchase instantly. All names include a matching URL and a complimentary Logo Design.",
+      "button": "#",
+      "buttonText": "Explore Names For Sale",
+      "image": "ways-to-use-two.png"
+    },
+    {
+      "header": "Agency-level Managed Contests",
+      "body": "Our Managed contests combine the power of crowdsourcing with the rich experience of our branding consultants. Get a complete agency-level experience at a fraction of Agency costs.",
+      "button": "#",
+      "buttonText": "Learn More",
+      "image": "ways-to-use-three.png"
+    }
+  ]
+  

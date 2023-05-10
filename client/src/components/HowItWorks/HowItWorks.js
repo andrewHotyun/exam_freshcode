@@ -4,6 +4,7 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import CONSTANTS from '../../constants';
 import Modal from 'react-modal';
+import OurServices from './OurServices/OurServices';
 
 const HowItWorks = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,20 @@ const HowItWorks = () => {
                     <div className={styles.image}>
                         <img src={`${CONSTANTS.STATIC_IMAGES_PATH}/phone2.png`}></img>
                     </div>
-                </section>               
+                </section>     
+
+                <section className={styles.sectionTwo}>
+                    <span className={styles.span}>Our Services</span>
+                    <h2 className={styles.h2}>3 Ways To Use Squadhelp</h2>
+                    <p>
+                        Squadhelp offers 3 ways to get you a perfect name for your business.
+                    </p>
+                <OurServices/>
+                </section>
+
+                <hr className={styles.line}></hr>
+
+                
             </div>
             <Footer/>
         </div>

@@ -14,6 +14,7 @@ const HowItWorks = () => {
         <div>
             <Header/>
             <div className={styles.container}>
+
                 <section className={styles.sectionOne}>
                     <div className={styles.information}>
                         <span className={styles.span}>World's #1 Naming Platform</span>
@@ -47,7 +48,7 @@ const HowItWorks = () => {
 
                 <section className={styles.sectionTwo}>
                     <span className={styles.span}>Our Services</span>
-                    <h2 className={styles.h2}>3 Ways To Use Squadhelp</h2>
+                    <h2 className={styles.header}>3 Ways To Use Squadhelp</h2>
                     <p>
                         Squadhelp offers 3 ways to get you a perfect name for your business.
                     </p>
@@ -56,7 +57,38 @@ const HowItWorks = () => {
 
                 <hr className={styles.line}></hr>
 
-                
+                <section className={styles.sectionThree}>
+                    <img
+                        src={`${CONSTANTS.STATIC_IMAGES_PATH}/naming-steps-contest-icon.png`}
+                        style={{ width: '4em', height: '4em', marginTop: '4em' }}
+                    ></img>
+                    <h3 className={styles.header}>How Do Naming Contests Work?</h3>
+                    <div className={styles.fourNamingSteps}>
+                        <img
+                        style={{ width: '40em', height: '41em', marginTop: '3em'}}
+                        src={`${CONSTANTS.STATIC_IMAGES_PATH}/naming-steps-contest-image.png`}
+                        ></img>
+                        <ul className={styles.fourNamingStepsList}>
+                        <li>
+                            <span className={styles.numbers}>1.</span><p>Fill out your Naming Brief and begin receiving name ideas in
+                            minutes.</p>
+                        </li>
+                        <li>
+                            <span className={styles.numbers}>2.</span><p>Rate the submissions and provide feedback to creatives.
+                            Creatives submit even more names based on your feedback.</p>
+                        </li>
+                        <li>
+                            <span className={styles.numbers}>3.</span><p>Our team helps you test your favorite names with your target
+                            audience. We also assist with Trademark screening.</p>
+                        </li>
+                        <li>
+                            <span className={styles.numbers}>4.</span><p>Pick a Winner. The winner gets paid for their submission.</p></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <hr className={styles.line}></hr>
+
             </div>
             <Footer/>
         </div>

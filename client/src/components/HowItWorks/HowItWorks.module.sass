@@ -165,3 +165,58 @@ p
   color: #377dff
   font-weight: bold
   font-size: x-large      
+
+.sectionFive
+  width: 100%
+  position: relative
+  z-index: 2
+  overflow: hidden
+  background-image: linear-gradient(150deg,#2d1582 0%,#19a0ff 100%)
+  background-repeat: repeat-x
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  margin-top: 2.5em
+
+  &>h1
+    color: #00DFFC
+    font-weight: bold
+    font-size: xx-large
+    margin: 1em 0 0.5em 0
+
+  &>p
+    color: white
+    font-size: x-large
+    line-height: 1.5
+
+  &>span 
+    color: white
+    padding: 10px 15px   
+
+  &>a 
+    border-radius: 5px
+    text-decoration: none
+    text-align: center
+    padding: 1em
+    margin: 1em
+    background-color: white
+    color: black
+    transition: all 0.5s
+    &:hover
+      transform: translateY(-3px) 
+      box-shadow: 1px 4px 5px rgba(255,255,255,0.35)
+
+.imageTop
+  max-width: 13rem
+  z-index: -1
+  position: absolute
+  left: 0
+  top: 0
+
+.imageBottom
+  max-width: 13rem 
+  z-index: -1
+  position: absolute
+  right: 0
+  bottom: 0

@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import OurServices from './OurServices/OurServices';
 import FAQ from './FAQ/FAQ';
 import categories from './FAQ/FAQ.json'
+import { Link } from 'react-router-dom';
 
 const HowItWorks = () => {
 
@@ -119,6 +120,25 @@ const HowItWorks = () => {
                     <div className={styles.FAQitems}>{categories.map(faqCategories)}</div>
                 </section>
                 
+                <section className={styles.sectionFive}>
+                    <h1>Ready to get started?</h1>
+                    <p>
+                        Fill out your contest brief and begin receiving custom name
+                        suggestions within minutes.
+                    </p>
+                    <Link to='/startContest'>
+                        <span>Start A Contest</span>
+                    </Link>
+                    <img
+                        className={styles.imageTop}
+                        src={`${CONSTANTS.STATIC_IMAGES_PATH}/image-top.png`}
+                    ></img>
+                    <img
+                        className={styles.imageBottom}
+                        src={`${CONSTANTS.STATIC_IMAGES_PATH}/image-bottom.png`}
+                    ></img>
+                </section>
+
             </div>
             <Footer/>
         </div>

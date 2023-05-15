@@ -9,6 +9,7 @@ import FAQ from './FAQ/FAQ';
 import categories from './FAQ/FAQ.json'
 import { Link } from 'react-router-dom';
 import Statistics from './Statistics/Statistics';
+import Questions from './Questions/Questions';
 
 const HowItWorks = () => {
 
@@ -139,7 +140,11 @@ const HowItWorks = () => {
                         src={`${CONSTANTS.STATIC_IMAGES_PATH}/image-bottom.png`}
                     ></img>
                 </section>
-                <Statistics/>             
+
+                <Statistics/>   
+
+                <Questions/>     
+                     
             </div>
             <Footer/>
         </div>

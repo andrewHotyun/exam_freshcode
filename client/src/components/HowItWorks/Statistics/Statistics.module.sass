@@ -1,0 +1,35 @@
+.sectionSix
+  padding: 2vh 5vw 2vh 7vw
+  margin: 10vh 0
+
+.containerStatistics
+  margin-top: -2em
+  display: flex
+  .information
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 20px
+    position: relative
+    margin-left: 7em
+    p
+      text-align: center
+      margin: 1em
+      line-height: 1.6
+      span
+        font-weight:600
+        color: black     
+    img
+      width: 70px
+      height: 70px
+    &::after
+      content: ''
+      height: 5rem
+      border-right: 1px solid #e7eaf3
+      position: absolute
+      left: 120%
+      top: 30%
+      transform: rotate(15deg)
+    &:last-child::after
+      content: none

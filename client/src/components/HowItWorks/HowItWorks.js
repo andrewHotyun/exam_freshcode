@@ -10,6 +10,7 @@ import categories from './FAQ/FAQ.json'
 import { Link } from 'react-router-dom';
 import Statistics from './Statistics/Statistics';
 import Questions from './Questions/Questions';
+import Brands from './Brands/Brands';
 
 const HowItWorks = () => {
 
@@ -144,7 +145,9 @@ const HowItWorks = () => {
                 <Statistics/>   
 
                 <Questions/>     
-                     
+
+                <Brands/>
+
             </div>
             <Footer/>
         </div>

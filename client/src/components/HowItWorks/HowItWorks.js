@@ -5,11 +5,28 @@ import Footer from "../Footer/Footer"
 import CONSTANTS from '../../constants';
 import Modal from 'react-modal';
 import OurServices from './OurServices/OurServices';
+import FAQ from './FAQ/FAQ';
+import categories from './FAQ/FAQ.json'
 
 const HowItWorks = () => {
+
     const [isOpen, setIsOpen] = useState(false);
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
+
+    const faqCategories = (category, i) => (
+        <div id={category.shortCategoryTitle} key={i}>
+          <h3 className={styles.categoryTitle}>{category.categoryTitle}</h3>
+          <div className={styles.faqs}>
+            {category.faqs.map(faq => (
+              <FAQ faq={faq} />
+            ))}
+          </div>
+          <hr className={styles.line}></hr>
+
+        </div>
+      );
+
     return (
         <div>
             <Header/>
@@ -89,6 +106,19 @@ const HowItWorks = () => {
 
                 <hr className={styles.line}></hr>
 
+                <section className={styles.sectionFour}>
+                    <ul className={styles.categories}>
+                        {categories.map((category, i) => (
+                        <li key={i}>
+                            <a href={`#${category.shortCategoryTitle}`}>
+                            {category.categoryTitle}{' '}
+                            </a>
+                        </li>
+                        ))}
+                    </ul>
+                    <div className={styles.FAQitems}>{categories.map(faqCategories)}</div>
+                </section>
+                
             </div>
             <Footer/>
         </div>

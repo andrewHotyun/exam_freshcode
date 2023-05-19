@@ -1,5 +1,6 @@
 import * as yup from 'yup';
 import valid from 'card-validator';
+import moment from 'moment';
 
 export default {
   LoginSchem: yup.object().shape({
@@ -66,4 +67,10 @@ export default {
   CatalogSchema: yup.object({
     catalogName: yup.string().test('test-catalogName', 'required', (value) => value && value.trim().length >= 1).required('required'),
   }),
+  EventSchema: yup.object().shape({
+    name: yup.string().test('test-eventName', 'required', (value) => (value && value.trim().length >= 1)).required('required'),
+    start: yup.date().min(moment().add(1, 'minute').format('YYYY-MM-DDTHH:mm'), 'Minimum value is the current date and time').required('required'),
+    notification: yup.date().max(yup.ref('start'), 'Maximum value is the date and time of the start of the event')
+    .min(moment().add(1, 'minute').format('YYYY-MM-DDTHH:mm'), 'Minimum value is the current date and time').required('required'),
+  })
 };

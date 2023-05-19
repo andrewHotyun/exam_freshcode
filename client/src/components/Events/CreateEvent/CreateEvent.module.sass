@@ -1,0 +1,100 @@
+.event
+    display: flex
+    flex-direction: column
+    padding: 20px
+    align-items: center
+    height: max-content
+    max-height: 550px
+    width: 40%
+    margin-bottom: 40px
+
+    @media (max-width: 1190px)
+        width: 35%
+
+    @media (max-width: 922px)
+        width: 80%
+
+    @media (max-width: 700px)
+        width: 100%
+
+    h1
+        font-size: 30px
+        color: #455A64
+        text-align: center
+        margin: 0 auto 30px auto
+        letter-spacing: 3px
+
+    label
+        font-size: 16px
+        margin-bottom: 20px
+        display: flex
+
+
+    button, button[type="submit"]
+        width: 355px
+        border-radius: 5px
+        display: flex
+        justify-content: center
+        align-items: center
+        background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #E55D87  100%)
+        height: 55px
+        padding: 0
+        border: 0
+        font-size: 20px
+        color: white
+        transition: 0.5s
+        background-size: 200% auto
+        margin-top: 1em
+        letter-spacing: 2px
+        &:hover 
+            background-position: right center
+            color: #fff
+            text-decoration: none
+            cursor: pointer
+            border-radius: 5px
+
+        @media (max-width: 1190px)
+            width: 250px
+
+        @media (max-width: 922px)
+            width: 400px
+
+        @media (max-width: 600px)
+            width: 333px     
+
+.input
+    width: 350px
+    height: 38px
+    text-align: center
+    margin-bottom: 1rem
+    border-color: #90A4AE
+    border-radius: 5px
+    color: #212121
+    font-size: 17px
+    transition: 0.5s
+    &:hover 
+            background-position: right center
+
+    @media (max-width: 1190px)
+        width: 250px
+
+    @media (max-width: 922px)
+        width: 400px
+
+    @media (max-width: 600px)
+        width: 330px
+
+.required
+    color: red
+    font-size: 13px
+    text-align: center
+    display: block
+    margin-bottom: 15px
+    margin-top: -15px
+
+.notValid
+    border-color: #F50057
+
+.valid
+    border-color: #64FFDA
+

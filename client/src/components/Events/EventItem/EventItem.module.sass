@@ -1,0 +1,66 @@
+.notification 
+  background-color: #18FFFF!important
+  border-radius: 5px
+  color: black
+
+.container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-color: #18FFFF
+    padding: 20px
+    margin-bottom: 15px
+    border-radius: 5px
+
+    @media(max-width: 400px)
+        flex-direction: column
+
+    &:hover
+        background-color: #E0E0E0!important   
+
+    &.completed 
+    background-color: red
+
+.eventBody
+    width: 100%
+
+    @media (max-width: 630px)
+        min-width: 200px
+
+    .eventTitle
+        color: #006064
+        font-size: 18px
+        font-weight: 500
+        margin-right: 20px
+
+    span
+        font-size: 13px
+        color: #0277BD
+        padding-top: 15px
+        display: inline-block
+
+.actions
+    display: flex
+
+    .editIcon
+        color: blue
+        font-size: 25px    
+        cursor: pointer 
+        margin-right: 15px
+
+    .saveIcon   
+        color: #7B1FA2
+        font-size: 25px    
+        cursor: pointer 
+        margin-right: 15px
+
+    .cancelIcon
+        color: #E91E63
+        font-size: 25px    
+        cursor: pointer 
+        margin-right: 15px
+
+    .deleteIcon
+        color: red
+        font-size: 25px    
+        cursor: pointer 

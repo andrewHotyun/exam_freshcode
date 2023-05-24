@@ -6,14 +6,15 @@ import FormInput from '../../FormInput/FormInput';
 import styles from './CreateEvent.module.sass';
 
 const CreateEvent = (props) => {
-  const {userId, updateEvent} = props;
+  const { userId, updateEvent } = props;
 
-  const createEvent = (values, {resetForm}) => {
+  const createEvent = (values, { resetForm }) => {
     const addEvent = {
-      id: `${userId}${Date.now()}`,
-      name: values.name,
-      start: values.start,
-      notification: values.notification
+      userId: `${userId}${Date.now()}`,
+      eventName: values.eventName,
+      eventStart: values.eventStart,
+      eventEnd: values.eventEnd, 
+      eventNotification: values.eventNotification
     };
     updateEvent(addEvent);
     resetForm();
@@ -25,16 +26,17 @@ const CreateEvent = (props) => {
       <Formik
         onSubmit={createEvent}
         initialValues={{
-          name: '',
-          start: '',
-          notification: ''
+          eventName: '',
+          eventStart: '',
+          eventEnd: '', 
+          eventNotification: ''
         }}
         validationSchema={eventSchema.EventSchema}
       >
         <Form>
           <label>Name:</label>
           <FormInput
-            name="name"
+            name="eventName"
             type="text"
             placeholder="Enter event name"
             classes={{
@@ -46,7 +48,19 @@ const CreateEvent = (props) => {
           />
           <label>Start date:</label>
           <FormInput
-            name="start"
+            name="eventStart"
+            type="datetime-local"
+            min={moment().format('YYYY-MM-DDTHH:mm')}
+            classes={{
+              input: styles.input,
+              warning: styles.required,
+              valid: styles.valid,
+              notValid: styles.notValid,
+            }}
+          />
+          <label>End date:</label>
+          <FormInput
+            name="eventEnd"
             type="datetime-local"
             min={moment().format('YYYY-MM-DDTHH:mm')}
             classes={{
@@ -58,7 +72,7 @@ const CreateEvent = (props) => {
           />
           <label>Notification date:</label>
           <FormInput
-            name="notification"
+            name="eventNotification"
             type="datetime-local"
             min={moment().format('YYYY-MM-DDTHH:mm')}
             classes={{
@@ -76,4 +90,3 @@ const CreateEvent = (props) => {
 };
 
 export default CreateEvent;
-

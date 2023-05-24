@@ -68,9 +68,12 @@ export default {
     catalogName: yup.string().test('test-catalogName', 'required', (value) => value && value.trim().length >= 1).required('required'),
   }),
   EventSchema: yup.object().shape({
-    name: yup.string().test('test-eventName', 'required', (value) => (value && value.trim().length >= 1)).required('required'),
-    start: yup.date().min(moment().add(1, 'minute').format('YYYY-MM-DDTHH:mm'), 'Minimum value is the current date and time').required('required'),
-    notification: yup.date().max(yup.ref('start'), 'Maximum value is the date and time of the start of the event')
-    .min(moment().add(1, 'minute').format('YYYY-MM-DDTHH:mm'), 'Minimum value is the current date and time').required('required'),
+    eventName: yup.string().test('test-eventName', 'required', (value) => (value && value.trim().length >= 1)).required('required'),
+    eventStart: yup.date().required('required'),
+    eventEnd: yup.date().min(yup.ref('eventStart'), 'Minimum value is the start of the event').required('required'),
+    eventNotification: yup.date()
+      .max(yup.ref('eventEnd'), 'Maximum value is the date and time of the end of the event')
+      .min(moment().add(1, 'minute').toDate(), 'Minimum value is the current date and time')
+      .required('required'),
   })
 };

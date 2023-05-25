@@ -1,0 +1,10 @@
+db.messages.aggregate([
+    {
+        $match: {
+            messages: "паровоз"
+        }
+    }, 
+    {
+        $count: "count"
+    }
+])

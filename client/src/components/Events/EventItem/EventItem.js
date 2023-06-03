@@ -22,8 +22,14 @@ const EventItem = (props) => {
     const ref = useRef(); 
 
     const turnOnNotification = () => {
-          ref.current.classList.add(styles.notification);
-          toast.error(`The ${eventName} event will end soon!`);
+        const isEventCompleted = moment(eventEnd).isBefore(moment());
+        if (isEventCompleted) {
+            toast.error(`The ${eventName} event has ended!`);
+            ref.current.classList.add(styles.completed);
+        } else {
+            ref.current.classList.add(styles.notification);
+            toast.error(`The ${eventName} event will end soon!`);
+        }
       };
 
     const deleteEvent = () => {
@@ -52,6 +58,7 @@ const EventItem = (props) => {
         if (index >= 0) {
             userEvents[index].eventName = editedName;
             userEvents[index].eventStart = editedStart;
+            userEvents[index].eventEnd = editedEnd;
             localStorage.setItem(`${userId}`, JSON.stringify(userEvents));
         }
         setEditing(false);
@@ -59,24 +66,27 @@ const EventItem = (props) => {
     }
 
     useEffect(() => {
+        // console.log("eventEnd value:", eventEnd);
+
         const isEventCompleted = moment(eventEnd).isBefore(moment());
         setCompleted(isEventCompleted);
-
+      
         if (isEventCompleted) {
-            turnOnNotification();
-          }
-
-      }, [eventEnd]);
-
-    useEffect(() => {
-        const diffNotification = moment(eventNotification).diff(moment());
-        const timerNotification = setTimeout(turnOnNotification, diffNotification);
-        
-        return () => {
-          clearTimeout(timerNotification);
-        };
-      }, [eventNotification]);
-
+          turnOnNotification();
+        } else {
+          const diffNotification = moment(eventNotification).diff(moment());
+          const timerNotification = setTimeout(turnOnNotification, diffNotification);
+      
+          return () => {
+            clearTimeout(timerNotification);
+          };
+        }
+      
+        if (completed) {
+          turnOnNotification();
+        }
+      }, [eventEnd, eventNotification]);
+      
     return (    
         <>
             <li
@@ -92,7 +102,7 @@ const EventItem = (props) => {
                                 type="text"
                                 value={editedName}
                                 onChange={(e) => setEditedName(e.target.value)}
-                                className={styles.eventTitle}
+                                className={`${styles.eventTitle} ${styles.input}` }
                             />
                             <input
                                 type="datetime-local"
@@ -133,4 +143,3 @@ const EventItem = (props) => {
 }
 
 export default EventItem;
-

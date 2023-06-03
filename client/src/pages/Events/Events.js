@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import CreateEvent from '../../components/Events/CreateEvent/CreateEvent';
 import ExistingEvents from '../../components/Events/ExistingEvents/ExistingEvents';
 import styles from './Events.module.sass';
@@ -9,7 +10,6 @@ const Events = (props) => {
     const {id} = props;
 
     const [eventData, setEventData] = useState();
-
     const updateEvent = (value) => {
         setEventData(value)
     }
@@ -21,10 +21,10 @@ const Events = (props) => {
                 <CreateEvent userId={id} updateEvent={updateEvent}/>
                 <ExistingEvents userId={id} eventData={eventData}/>
             </div>
+            <Footer />
         </>
     );
 }
-
 
 const mapStateToProps = (state) => {
     const {userStore: {data}} = state;

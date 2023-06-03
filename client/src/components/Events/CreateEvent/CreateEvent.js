@@ -14,7 +14,7 @@ const CreateEvent = (props) => {
       eventName: values.eventName,
       eventStart: values.eventStart,
       eventEnd: values.eventEnd, 
-      eventNotification: values.eventNotification
+      eventNotification: values.eventNotification 
     };
     updateEvent(addEvent);
     resetForm();

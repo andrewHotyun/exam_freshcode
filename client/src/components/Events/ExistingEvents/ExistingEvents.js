@@ -39,7 +39,7 @@ const ExistingEvents = (props) => {
                         eventName={event.eventName}
                         eventStart={event.eventStart}
                         eventEnd={event.eventEnd}
-                        eventNotification={event.notification}/>)
+                        eventNotification={event.eventNotification}/>)
             }
         }
         return eventsList;

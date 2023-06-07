@@ -1,5 +1,3 @@
-
-
 module.exports = (sequelize, DataTypes) => {
   const Offer = sequelize.define('Offers', {
     id: {
@@ -32,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     status: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: 'pending',
+      defaultValue: 'new',
     },
   },
   {

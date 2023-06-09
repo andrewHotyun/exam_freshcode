@@ -64,7 +64,7 @@ class App extends Component {
               title: 'LOGO',
             })}
           />
-          <Route exact path="/dashboard" component={PrivateHoc(Dashboard)} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/contest/:id" component={PrivateHoc(ContestPage)} />
           <Route exact path="/account" component={PrivateHoc(UserProfile)} />
           <Route component={NotFound} />

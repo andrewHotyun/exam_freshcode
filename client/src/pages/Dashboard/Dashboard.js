@@ -4,22 +4,41 @@ import CONSTANTS from '../../constants';
 import CustomerDashboard from '../../components/CustomerDashboard/CustomerDashboard';
 import CreatorDashboard from '../../components/CreatorDashboard/CreatorDashboard';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import styles from '../LoginPage/LoginPage.module.sass' 
 
 const Dashboard = (props) => {
   const { role, history } = props;
   const dashboardRender = () => {
-    if (role === CONSTANTS.CUSTOMER) {
-      return <CustomerDashboard history={history} match={props.match} />;
-    } else if (role === CONSTANTS.CREATOR) {
-      return <CreatorDashboard history={history} match={props.match} />;
-    } else if (role === CONSTANTS.MODERATOR) {
-      return <CustomerDashboard history={history} match={props.match} role={props.role} />;
+    if(role) {
+      switch(role) {
+        case CONSTANTS.CUSTOMER:{
+          return (<CustomerDashboard history={history} match={props.match} />)
+        }
+        case CONSTANTS.CREATOR:{
+          return (<CreatorDashboard history={history} match={props.match} />)
+        }
+        case CONSTANTS.MODERATOR:{
+          return (<CustomerDashboard history={history} match={props.match} role={props.role}/>)
+        } }
+    } else {
+        return (
+          <div className={styles.mainContainer}>
+          <div className={styles.loginContainer}>
+            <div className={styles.loginFormContainer}>
+              <LoginForm history={history} />
+            </div>
+          </div>
+        </div>
+        )
     }
-  }
+  } 
   return (
     <div>
       <Header />
       {dashboardRender()}
+      <Footer />
     </div>
   );
 };
